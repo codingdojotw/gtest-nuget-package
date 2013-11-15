@@ -1,0 +1,22 @@
+nuget {
+	nuspec {
+		id = gtest-package;
+		version: 1.7.0;
+		title: "Google C++ Testing Framework Package";
+
+		authors: {Google};
+		owners: {Coding Dojo in Taiwan, Sam Tsai};
+		licenseUrl: "http://opensource.org/licenses/BSD-3-Clause";
+		projectUrl: "https://github.com/codingdojotw/gtest-package";
+		iconUrl: "https://dl.dropboxusercontent.com/u/236604952/GoogleIcon.png";
+		requireLicenseAcceptance: false;
+
+		summary: @"Google's framework for writing C++ tests on a variety of platforms (Linux, Mac OS X, Windows, Cygwin, Windows CE, and Symbian).";
+
+		description: @"Google's framework for writing C++ tests on a variety of platforms (Linux, Mac OS X, Windows, Cygwin, Windows CE, and Symbian). Based on the xUnit architecture. Supports automatic test discovery, a rich set of assertions, user-defined assertions, death tests, fatal and non-fatal failures, value- and type-parameterized tests, various options for running the tests, and XML test report generation.";
+
+		releaseNotes: "Pre-built package for Google C++ Testing Framework v1.7.0";
+		copyright: "";
+		tags: { C++, gtest, Google, native, CoApp};
+	};
+}
