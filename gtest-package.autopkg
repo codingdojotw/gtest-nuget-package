@@ -1,10 +1,16 @@
+#defines {
+	GTEST_VERSION = 1.7.0;
+	GTEST_ROOT = "gtest";
+	GTEST_BUILD = "build";
+}
+
 nuget {
 	nuspec {
 		id = gtest-package;
-		version: 1.7.0;
-		title: "Google C++ Testing Framework Package";
+		version: ${GTEST_VERSION};
+		title: "Google C++ Testing Framework";
 
-		authors: {Google};
+		authors: {Coding Dojo in Taiwan};
 		owners: {Coding Dojo in Taiwan, Sam Tsai};
 		licenseUrl: "http://opensource.org/licenses/BSD-3-Clause";
 		projectUrl: "https://github.com/codingdojotw/gtest-package";
@@ -15,8 +21,32 @@ nuget {
 
 		description: @"Google's framework for writing C++ tests on a variety of platforms (Linux, Mac OS X, Windows, Cygwin, Windows CE, and Symbian). Based on the xUnit architecture. Supports automatic test discovery, a rich set of assertions, user-defined assertions, death tests, fatal and non-fatal failures, value- and type-parameterized tests, various options for running the tests, and XML test report generation.";
 
-		releaseNotes: "Pre-built package for Google C++ Testing Framework v1.7.0";
+		releaseNotes: "Pre-built package for Google C++ Testing Framework";
 		copyright: "";
 		tags: { C++, gtest, Google, native, CoApp};
-	};
+	}
+
+	files {
+		// We want to preserved 'gtest' for include folder, so don't use
+		// this section, instead, use 'nestedInclude' section below.
+		include: {
+		};
+
+		nestedInclude: {
+			#destination = ${d_include}\gtest;
+			${GTEST_ROOT}\include\**
+		};
+
+		[x86,v120,Debug] {
+			lib: ${GTEST_BUILD}\vs12\x86\Debug\gtest.lib;
+		}
+
+		[x64,v120,Debug] {
+			lib: ${GTEST_BUILD}\vs12\x64\Debug\gtest.lib;
+		}
+
+		// In case you are looking for it. Here is why no 'release' version:
+		//   Since gtest is a 'test' framework, I don't think there should have
+		//   needs for 'release' version.
+	}
 }
