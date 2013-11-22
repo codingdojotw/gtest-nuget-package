@@ -37,12 +37,51 @@ nuget {
 			${GTEST_ROOT}\include\**
 		};
 
+		//
+		// Visual Studio 2013
+		//
 		[x86,v120,Debug] {
 			lib: ${GTEST_BUILD}\vs12\x86\Debug\gtest.lib;
+			symbols: ${GTEST_BUILD}\vs12\x86\Debug\gtest.pdb;
 		}
 
 		[x64,v120,Debug] {
 			lib: ${GTEST_BUILD}\vs12\x64\Debug\gtest.lib;
+			symbols: ${GTEST_BUILD}\vs12\x64\Debug\gtest.pdb;
+		}
+
+		//
+		// Visual Studio 2012
+		//
+		[x86,v110,Debug] {
+			lib: ${GTEST_BUILD}\vs11\x86\Debug\gtest.lib;
+			symbols: ${GTEST_BUILD}\vs11\x86\Debug\gtest.pdb;
+		}
+
+		[x64,v110,Debug] {
+			lib: ${GTEST_BUILD}\vs11\x64\Debug\gtest.lib;
+			symbols: ${GTEST_BUILD}\vs11\x64\Debug\gtest.pdb;
+		}
+
+		//
+		// Visual Studio 2010
+		//
+		[x86,v100,Debug] {
+			lib: ${GTEST_BUILD}\vs10\x86\Debug\gtest.lib;
+			symbols: ${GTEST_BUILD}\vs10\x86\Debug\gtest.pdb;
+		}
+
+		[x64,v100,Debug] {
+			lib: ${GTEST_BUILD}\vs10\x64\Debug\gtest.lib;
+			symbols: ${GTEST_BUILD}\vs10\x64\Debug\gtest.pdb;
+		}
+
+		//
+		// Visual Studio 2008
+		//
+		[x86,v90,Debug] {
+			lib: ${GTEST_BUILD}\vs9\x86\Debug\gtest.lib;
+			symbols: ${GTEST_BUILD}\vs9\x86\Debug\gtest.pdb;
 		}
 
 		// In case you are looking for it. Here is why no 'release' version:
