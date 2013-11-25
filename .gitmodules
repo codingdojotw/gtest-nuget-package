@@ -1,3 +1,6 @@
 [submodule "gtest"]
 	path = gtest
 	url = https://github.com/codingdojotw/gtest-mirror
+[submodule "gmock"]
+	path = gmock
+	url = https://github.com/codingdojotw/gmock-mirror
