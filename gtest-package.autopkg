@@ -88,4 +88,17 @@ nuget {
 		//   Since gtest is a 'test' framework, I don't think there should have
 		//   needs for 'release' version.
 	}
+
+	targets {
+		// This fixed build error caused by the not complete Variadic Templates
+		// in Visual Studio 2010/2012. Error message looks like below:
+		//
+		//     error C2977: 'std::tuple' : too many template arguments
+		//
+		[v110]
+		Defines += _VARIADIC_MAX=10;
+
+		[v100]
+		Defines += _VARIADIC_MAX=10;
+	}
 }
